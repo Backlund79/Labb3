@@ -2,7 +2,7 @@
   Skapa en dynamisk webbapplikation genom att kombinera HTML, CSS och teorin från modulerna från Laboration 3.
 
 ## För Godkänt så ska följande krav upppfyllas:
----
+
 - [ ] fetch (eller liknande) används för att visa information från en eller flera webbtjänster presenteras på sajten (Visa åtminstone tio värden)
 - [ ] Interpolering ({{ och }}) används
 - [ ] v-on används
@@ -15,7 +15,7 @@
 - [ ] Koden för projektet publiceras på GitHub (eller liknande)
 
 ## För Väl godkänt så ska kraven för Godkänt vara uppfyllda. Dessutom ska följande krav uppfyllas:
----
+
 - [ ] Kortformerna för v-bind och v-on ska alltid användas istället för v-bind och v-on
 - [ ] Minst ett v-model-värde sparas i, och hämtas från, Vuex
 - [ ] Minst en path parameter används i Vue Router
