@@ -1,5 +1,6 @@
 <template>
   <div class="list">
-    <h1>This is an about page</h1>
+    <hero></hero>
+    <h1>Coctails listed A-Z</h1>
   </div>
 </template>

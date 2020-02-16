@@ -4,9 +4,20 @@
       <router-link to="/">Home</router-link>|
       <router-link to="/list">List</router-link>
     </div>
+    <Hero></Hero>
     <router-view />
   </div>
 </template>
+
+<script>
+import Hero from "@/components/Hero.vue";
+export default {
+  name: "app",
+  components: {
+    Hero
+  }
+};
+</script>
 
 <style>
 #app {
