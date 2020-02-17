@@ -43,4 +43,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+span {
+  cursor: pointer;
+}
+</style>
