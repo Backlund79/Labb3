@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container justify-content-center">
+    <div v-if="drinks" class="container justify-content-center">
       <h1>Random Cocktail</h1>
       <b-card no-body class="overflow-hidden shadow">
         <b-row no-gutters>

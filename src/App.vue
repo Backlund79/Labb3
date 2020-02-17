@@ -6,6 +6,10 @@
     </div>
     <Hero></Hero>
     <router-view />
+
+    <div class="footer text-center py-3">
+      <b-container fluid>&copy; 2020 Copyright: Emil Backlund</b-container>
+    </div>
   </div>
 </template>
 
