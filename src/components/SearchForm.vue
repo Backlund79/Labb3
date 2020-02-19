@@ -1,14 +1,18 @@
 <template>
-  <div>
-    <div class="text-center">
-      <b-spinner
-        v-if="!drinks"
-        style="width: 3rem; height: 3rem;"
-        label="Large Spinner"
-      ></b-spinner>
+  <div class="container">
+    <b-input-group>
+      <b-form-input v-model="text" @keydown.enter="searchForDrinks" :placeholder="place"></b-form-input>
+      <b-input-group-append>
+        <b-button size="sm" text="Button" @click="searchForDrinks" variant="success">Search</b-button>
+      </b-input-group-append>
+    </b-input-group>
+
+    <div v-if="drinks" class="mt-2">
+      Searching for:
+      <b-spinner v-if="!drinks" style="width: 3rem; height: 3rem;" label="Large Spinner"></b-spinner>
     </div>
     <div v-if="drinks" class="container justify-content-center">
-      <h1>Random Cocktail</h1>
+      <h1>{{ this.$store.state.text }}</h1>
       <b-card no-body class="overflow-hidden shadow">
         <b-row no-gutters>
           <b-col md="6">
@@ -87,19 +91,12 @@
 
 <script>
 export default {
-  created() {
-    this.fetchData();
-  },
-  data() {
-    return {
-      drinks: null,
-      modalShow: false
-    };
-  },
-
   methods: {
-    fetchData() {
-      fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+    searchForDrinks() {
+      fetch(
+        "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
+          this.$store.state.text
+      )
         .then(response => response.json())
         .then(result => {
           this.drinks = result;
@@ -109,7 +106,29 @@ export default {
         .catch(err => console.log(err));
     }
   },
-  name: "Card"
+  name: "SearchForm",
+  computed: {
+    text: {
+      get() {
+        return this.$store.state.text;
+      },
+      set(value) {
+        this.$store.commit("updateText", value);
+      }
+    }
+  },
+  data() {
+    return {
+      place: this.ph,
+      drinks: null,
+      modalShow: false
+    };
+  },
+  props: {
+    ph: {
+      type: String
+    }
+  }
 };
 </script>
 

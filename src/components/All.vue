@@ -1,14 +1,18 @@
 <template>
   <div class="container">
     <div>
-      <span @click="listByFirstLetter(item)" v-for="(item) in az" :key="item">{{ item }}{{ space }}</span>
+      <span @click="listByFirstLetter(item)" v-for="item in az" :key="item"
+        >{{ item }}{{ space }}</span
+      >
     </div>
     <ul v-if="sortByFirstLetter">
       <li
         @click="fetchDrink(cocktail)"
-        v-for="(cocktail) in sortByFirstLetter.drinks"
+        v-for="cocktail in sortByFirstLetter.drinks"
         :key="cocktail.id"
-      >{{ cocktail.strDrink }}</li>
+      >
+        {{ cocktail.strDrink }}
+      </li>
     </ul>
     <b-modal v-if="drinks" v-model="modalShow">
       <h3>{{ drinks.drinks[0].strDrink }}</h3>

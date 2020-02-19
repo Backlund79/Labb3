@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link>|
-      <router-link to="/list">List</router-link>
+      <router-link to="/list">List</router-link>|
+      <router-link to="/search">Search</router-link>
     </div>
     <Hero></Hero>
     <router-view />
@@ -12,7 +13,8 @@
         &copy; 2020 Copyright: Emil Backlund
         <div>
           Thanx to
-          <a href="https://www.thecocktaildb.com/api.php">TheCocktailDB</a> for the API
+          <a href="https://www.thecocktaildb.com/api.php">TheCocktailDB</a> for
+          the API
         </div>
       </b-container>
     </div>
