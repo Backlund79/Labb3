@@ -92,6 +92,19 @@
 <script>
 export default {
   methods: {
+    addressSearch() {
+      fetch(
+        "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
+          this.$route.params.drinkName
+      )
+        .then(response => response.json())
+        .then(result => {
+          this.drinks = result;
+
+          console.log(this.drinks);
+        })
+        .catch(err => console.log(err));
+    },
     searchForDrinks() {
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
@@ -106,6 +119,7 @@ export default {
         .catch(err => console.log(err));
     }
   },
+
   name: "SearchForm",
   computed: {
     text: {
@@ -116,6 +130,9 @@ export default {
         this.$store.commit("updateText", value);
       }
     }
+  },
+  created() {
+    this.addressSearch();
   },
   data() {
     return {
