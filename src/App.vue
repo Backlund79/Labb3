@@ -8,7 +8,13 @@
     <router-view />
 
     <div class="footer text-center py-3">
-      <b-container fluid>&copy; 2020 Copyright: Emil Backlund</b-container>
+      <b-container fluid>
+        &copy; 2020 Copyright: Emil Backlund
+        <div>
+          Thanx to
+          <a href="https://www.thecocktaildb.com/api.php">TheCocktailDB</a> for the API
+        </div>
+      </b-container>
     </div>
   </div>
 </template>
