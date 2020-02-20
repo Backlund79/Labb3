@@ -7,8 +7,8 @@
         label="Large Spinner"
       ></b-spinner>
     </div>
+    <b-button variant="success" @click="fetchData">Serve another</b-button>
     <div v-if="drinks" class="container justify-content-center">
-      <h1>Random Cocktail</h1>
       <b-card no-body class="overflow-hidden shadow">
         <b-row no-gutters>
           <b-col md="6">
@@ -103,8 +103,8 @@ export default {
         .then(response => response.json())
         .then(result => {
           this.drinks = result;
-
-          console.log(this.drinks);
+          this.$emit("random");
+          // console.log(this.drinks);
         })
         .catch(err => console.log(err));
     }

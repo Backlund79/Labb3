@@ -1,15 +1,29 @@
 <template>
   <div class="container">
     <b-input-group>
-      <b-form-input v-model="text" @keydown.enter="searchForDrinks" :placeholder="place"></b-form-input>
+      <b-form-input
+        v-model="text"
+        @keydown.enter="searchForDrinks"
+        :placeholder="place"
+      ></b-form-input>
       <b-input-group-append>
-        <b-button size="sm" text="Button" @click="searchForDrinks" variant="success">Search</b-button>
+        <b-button
+          size="sm"
+          text="Button"
+          @click="searchForDrinks"
+          variant="success"
+          >Search</b-button
+        >
       </b-input-group-append>
     </b-input-group>
 
     <div v-if="drinks" class="mt-2">
       Searching for:
-      <b-spinner v-if="!drinks" style="width: 3rem; height: 3rem;" label="Large Spinner"></b-spinner>
+      <b-spinner
+        v-if="!drinks"
+        style="width: 3rem; height: 3rem;"
+        label="Large Spinner"
+      ></b-spinner>
     </div>
     <div v-if="drinks" class="container justify-content-center">
       <h1>{{ this.$store.state.text }}</h1>

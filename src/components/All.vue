@@ -14,7 +14,7 @@
         {{ cocktail.strDrink }}
       </li>
     </ul>
-    <b-modal v-if="drinks" v-model="modalShow">
+    <b-modal lazy v-if="drinks" v-model="modalShow">
       <h3>{{ drinks.drinks[0].strDrink }}</h3>
       <strong>Alcoholic:</strong>
       {{ drinks.drinks[0].strAlcoholic }}
@@ -90,7 +90,6 @@ export default {
         .catch(err => console.log(err));
     },
     fetchDrink(cocktail) {
-      console.log(cocktail);
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
           cocktail.strDrink
@@ -99,7 +98,6 @@ export default {
         .then(result => {
           this.drinks = result;
           this.modalShow = true;
-          console.log(this.drinks);
         })
         .catch(err => console.log(err));
     }
