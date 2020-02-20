@@ -107,17 +107,19 @@
 export default {
   methods: {
     addressSearch() {
-      fetch(
-        "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
-          this.$route.params.drinkName
-      )
-        .then(response => response.json())
-        .then(result => {
-          this.drinks = result;
+      if (this.$route.params.drinkName) {
+        fetch(
+          "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
+            this.$route.params.drinkName
+        )
+          .then(response => response.json())
+          .then(result => {
+            this.drinks = result;
 
-          console.log(this.drinks);
-        })
-        .catch(err => console.log(err));
+            console.log(this.drinks);
+          })
+          .catch(err => console.log(err));
+      }
     },
     searchForDrinks() {
       fetch(

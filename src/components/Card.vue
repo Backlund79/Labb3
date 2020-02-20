@@ -7,7 +7,9 @@
         label="Large Spinner"
       ></b-spinner>
     </div>
-    <b-button variant="success" @click="fetchData">Serve another</b-button>
+    <b-button class="mb-3" variant="success" @click="fetchData"
+      >Serve another</b-button
+    >
     <div v-if="drinks" class="container justify-content-center">
       <b-card no-body class="overflow-hidden shadow">
         <b-row no-gutters>
@@ -28,7 +30,9 @@
               </b-card-text>
             </b-card-body>
             <div>
-              <b-button @click="modalShow = !modalShow">How to</b-button>
+              <b-button variant="success" @click="modalShow = !modalShow"
+                >How to</b-button
+              >
 
               <b-modal v-model="modalShow">
                 <h4>Ingridents:</h4>
