@@ -101,7 +101,7 @@ export default {
           .then(response => response.json())
           .then(result => {
             this.drinks = result;
-
+            this.$router.push(this.$route.params.drinkName);
             console.log(this.drinks);
           })
           .catch(err => console.log(err));
@@ -115,7 +115,7 @@ export default {
         .then(response => response.json())
         .then(result => {
           this.drinks = result;
-
+          this.$router.push("/search/" + this.$store.state.text);
           console.log(this.drinks);
         })
         .catch(err => console.log(err));

@@ -18,6 +18,6 @@
 
 - [x] Kortformerna för v-bind och v-on ska alltid användas istället för v-bind och v-on
 - [x] Minst ett v-model-värde sparas i, och hämtas från, Vuex
-- [x] Minst en path parameter används i Vue Router
+- [x] Minst en path parameter används i Vue Router (Programmatic Navigation)
 - [x] Minst en komponent ska använda minst ett custom event
 - [x] Alla props ska vara “typsäkra”

@@ -4,7 +4,9 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    text: null
+  },
   mutations: {
     updateText(state, text) {
       state.text = text;
